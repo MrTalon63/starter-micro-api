@@ -1,5 +1,5 @@
 var http = require('http');
-http.createServer(function (req, res) {
+http.createServer(async function (req, res) {
     console.log(`Just got a request at ${req.url}!`)
     if (req.url === "/favicon.ico") {
     res.write("Not found");
