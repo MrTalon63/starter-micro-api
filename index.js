@@ -6,7 +6,7 @@ http.createServer(async function (req, res) {
     res.end();
     return;
   }
-  const data = await fetch(`https://cdn.discordapp.com/attachments{req.url}`);
+  const data = await fetch(`https://cdn.discordapp.com/attachments${req.url}`);
   if (data.status.toString().startsWith("2")) {
     const buf = await data.arrayBuffer();
     res.writeHead(data.status, { "Content-Type": data.headers.get("Content-Type") });
